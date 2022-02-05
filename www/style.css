@@ -1,0 +1,43 @@
+body, html {
+    padding: 0px;
+    margin: 0px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
+
+
+#dz-root {
+    position: absolute;
+}
+
+#dz_wrapper {
+    width: 200px;
+    height: 200px;
+}
+
+#master {
+    display: grid;
+    grid-template-areas: "top_bar top_bar" "nav_bar content" "player_bar player_bar";
+    grid-template-columns: 14% 86%;
+    grid-template-rows: 10% 70% 20%;
+    height: 100vh;
+    width: 100vw;
+}
+
+#nav_bar {
+    grid-area: navbar;
+}
+
+#top_bar {
+    grid-area: top_bar;
+}
+
+#player_bar {
+    grid-area: player_bar;
+}
+
+#content {
+    grid-area: content;
+}

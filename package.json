@@ -1,0 +1,16 @@
+{
+  "name": "altui",
+  "version": "1.0.0",
+  "description": "Alternataive User Interface for Deezer.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Marston Connell <marston.ian.connell@gmail.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "express": "^4.17.2"
+  }
+}

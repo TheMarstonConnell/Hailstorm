@@ -1,0 +1,41 @@
+.playlist_block {
+
+    display: grid;
+    width: 240px;
+    height: 300px;
+    cursor: pointer;
+    padding: 4px;
+    background-color: gainsboro;
+    border-radius: 5px;
+    border-style: none;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.playlist_cover {
+    width: 100%;
+    border-style: none;
+    border-radius: 5px;
+
+}
+
+.scroll_grid {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    border-radius: 5px;
+    border-style: none;
+    background-color: honeydew;
+}
+
+#container {
+    display: grid;
+    width: 100%;
+    height: max-content;
+    justify-content: space-between;
+    grid-template-columns: repeat( auto-fit, minmax(240px, 1fr));
+    row-gap: 10px;
+    column-gap: 2px;
+}
