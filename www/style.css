@@ -1,33 +1,45 @@
-body, html {
+body,
+html {
     padding: 0px;
     margin: 0px;
     overflow-y: hidden;
     overflow-x: hidden;
+    background-color: #e4e5e4;
+    font-family: 'Mulish', sans-serif;
 }
 
-
-
+.blocking {
+    background-color: lightgray !important;
+    position: absolute !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    top: 0 !important;
+    left: 0 !important;
+    cursor: pointer;
+}
 
 #dz-root {
-    position: absolute;
+    z-index: 10;
 }
 
-#dz_wrapper {
-    width: 200px;
-    height: 200px;
+#dzplayer {
+    position: absolute;
+    top: -100vh;
+    z-index: 10;
 }
+
 
 #master {
     display: grid;
-    grid-template-areas: "top_bar top_bar" "nav_bar content" "player_bar player_bar";
+    grid-template-areas: "top_bar content""nav_bar content""album_art player_bar";
     grid-template-columns: 14% 86%;
-    grid-template-rows: 10% 70% 20%;
+    grid-template-rows: 10% 80% 10%;
     height: 100vh;
     width: 100vw;
 }
 
 #nav_bar {
-    grid-area: navbar;
+    grid-area: nav_bar;
 }
 
 #top_bar {
@@ -36,8 +48,174 @@ body, html {
 
 #player_bar {
     grid-area: player_bar;
+    display: grid;
+    grid-template-areas: "buttons slider extra";
+    grid-template-columns: 240px auto 20%;
+    background: #e0e0e0;
+    z-index: 2;
+    box-shadow:  -3px -3px 6px #9f9f9f,
+             5px 5px 10px #ffffff;
 }
+
+#button_wrapper {
+    grid-area: buttons;
+    position: relative;
+}
+
+#buttons {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    position: absolute;
+
+    top: 50%;
+    margin-top: -26px;
+}
+
+#slider_wrapper {
+    grid-area: slider;
+    position: relative;
+}
+
+.progressbarplay {
+    cursor: pointer;
+    overflow: hidden;
+    height: 14px;
+    border-radius: 6px;
+
+    background: #e0e0e0;
+    box-shadow: inset 2px 2px 3px #b5b5b5,
+                inset -2px -2px 3px #ffffff;
+}
+
+.progressbarplay .bar {
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(0,224,255,1) 0%, rgba(77,166,252,1) 100%);
+    width: 0;
+    height: 14px;
+    color: white;
+    box-sizing: border-box;
+    transition: width .2s ease;
+    border-radius: 4px;
+
+}
+
+#slider_seek {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin-top: -7px;
+}
+
 
 #content {
     grid-area: content;
+    margin-left: 80px;
+    margin-right: 80px;
+    /* z-index: 20; */
 }
+
+#album_cover {
+    grid-area: album_art;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+}
+
+#album_cover_img {
+    width: 100%;
+    margin-top: auto;
+    object-fit: contain;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border-top-right-radius: 10px;
+    
+    background: #e0e0e0;
+    box-shadow:  9px 9px 18px #cecece,
+             -9px -9px 18px #f2f2f2;
+}
+
+#logo {
+    margin-left: 26px;
+
+}
+
+
+.button {
+    border-radius: 50%;
+    background: #e0e0e0;
+    box-shadow:  5px 5px 10px #bcbcbc,
+                -5px -5px 10px #ffffff;
+    border-style: none;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button > svg {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    left: 50%;
+    margin-left: -15px;
+    fill: #6b6f70 ;
+}
+
+#play_button > #play_icon {
+    display: block;
+}
+
+#play_button.playing > #play_icon {
+    display: none;
+}
+
+#play_button > #pause_icon {
+    display: none;
+}
+
+#play_button.playing > #pause_icon {
+    display: block;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    /* background: #e0e0e0;
+    box-shadow: inset 1px 1px 2px #c7c7c7,
+            inset -1px -1px 2px #f9f9f9;
+    width: 14px; */
+
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #e4e5e4;
+
+    box-shadow: inset 2px 2px 3px #9f9f9f,
+            inset -2px -2px 3px #ffffff;
+    width: 10px;
+
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    /* background: #b30000;  */
+  }

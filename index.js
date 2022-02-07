@@ -3,11 +3,21 @@ const express = require('express');
 const app = express();
 const port = 9999;
 
+const fs = require('fs');
+
 let access_token = "";
 
 function main() {
 
+
+
     app.use(express.static('www'));
+
+    app.use('*', (req, res) => {
+        let readStream = fs.createReadStream("data/index.html");
+        readStream.pipe(res);
+    });
+
 
     app.get('/access_code', (req, res) => {
         res.status(200).send(access_token);

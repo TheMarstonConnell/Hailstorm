@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AltUI</title>
+    <script src="script.js"></script>
+    <script src="utils.js"></script>
+    <script src="ui.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="albums.css">
+    
+</head>
+<body>
+    <div id="dz-root" class="blocking">
+    </div>
+
+
+    <div id="master">
+
+        <div id="top_bar">
+            <h1 id="logo">ALT-UI</h1>
+        </div>
+
+        <div id="nav_bar">
+            <a href="#">Home</a>
+            <a href="#albums">Albums</a>
+            <a href="#playlists">Playlists</a>
+
+        </div>
+
+        <div id="content">
+            <div class="scroll_grid">
+                <div id="container"></div>
+            </div>
+        </div>
+
+        <div id="player_bar">
+            <div id="button_wrapper">
+                <div id="buttons">
+                    <button id="back_button" class="button">
+                        <svg id="back_icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                    </button>
+    
+                    <button id="play_button" class="button">
+                        <svg id="play_icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M8 5v14l11-7z"/></svg>
+                        <svg id="pause_icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </button>
+    
+                    <button id="skip_button" class="button">
+                        <svg id="skip_icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>                
+                    </button>
+                </div>
+            </div>
+            
+
+            <div id="slider_wrapper">
+                <div id="slider_seek" class="progressbarplay">
+                    <div id="inner_slider_seek" class="bar" style="width: 0%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="album_cover">
+            <img id="album_cover_img" src="https://e-cdns-images.dzcdn.net/images/playlist/d41d8cd98f00b204e9800998ecf8427e/200x200-000000-80-0-0.jpg" alt="Empty Album Art">
+        </div>
+        
+        
+    </div>
+
+    <script src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
+
+    
+
+</body>
+<script>
+    load();
+</script>
+</html>

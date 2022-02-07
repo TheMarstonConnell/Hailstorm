@@ -5,13 +5,20 @@
     height: 300px;
     cursor: pointer;
     padding: 4px;
-    background-color: gainsboro;
     border-radius: 5px;
     border-style: none;
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
 
+    box-shadow:  5px 5px 7px #c6c7c6,
+             -5px -5px 7px #ffffff;
+    background-color: #e4e5e4;
+
+}
+
+.playlist_text {
+    margin-left: 4px;
 }
 
 .playlist_cover {
@@ -27,7 +34,6 @@
     overflow-y: scroll;
     border-radius: 5px;
     border-style: none;
-    background-color: honeydew;
 }
 
 #container {
@@ -36,6 +42,10 @@
     height: max-content;
     justify-content: space-between;
     grid-template-columns: repeat( auto-fit, minmax(240px, 1fr));
-    row-gap: 10px;
-    column-gap: 2px;
+    row-gap: 20px;
+    column-gap: 10px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+
+    
 }
