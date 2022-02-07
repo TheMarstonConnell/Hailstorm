@@ -194,15 +194,7 @@ html {
 ::-webkit-scrollbar {
     width: 10px;
   }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    /* background: #e0e0e0;
-    box-shadow: inset 1px 1px 2px #c7c7c7,
-            inset -1px -1px 2px #f9f9f9;
-    width: 14px; */
 
-  }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
@@ -213,9 +205,30 @@ html {
             inset -2px -2px 3px #ffffff;
     width: 10px;
 
+}
+
+  li a {
+    text-decoration: none ;
+    color: black;
+    font-size: 24px;
   }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    /* background: #b30000;  */
+
+  ul {
+      padding: 0px;
+      list-style: none;
+      text-decoration: none;
+      color: black;
   }
+
+  #link_list {
+    margin-left: 20px;
+  }
+
+  #link_list > li {
+      margin-bottom: 10px;
+  }
+
+
+#link_list > li > a:hover {
+    text-decoration: underline;
+}
